@@ -1,0 +1,96 @@
+{
+  "title": "SQL Essentials for the Real World",
+  "instructor": "Personfu (FLLC)",
+  "modules": [
+    {
+      "id": "module_00",
+      "number": 0,
+      "title": "Course Orientation"
+    },
+    {
+      "id": "module_01",
+      "number": 1,
+      "title": "Relational Databases & Schema Design"
+    },
+    {
+      "id": "module_02",
+      "number": 2,
+      "title": "MySQL Workbench & Database Setup"
+    },
+    {
+      "id": "module_03",
+      "number": 3,
+      "title": "Retrieving Data From a Single Table"
+    },
+    {
+      "id": "module_04",
+      "number": 4,
+      "title": "Joining Multiple Tables"
+    },
+    {
+      "id": "module_05",
+      "number": 5,
+      "title": "Insert, Update, Delete (DML)"
+    },
+    {
+      "id": "module_06",
+      "number": 6,
+      "title": "Basic Database Administration"
+    },
+    {
+      "id": "module_07",
+      "number": 7,
+      "title": "Database Security & Privileges"
+    },
+    {
+      "id": "module_08",
+      "number": 8,
+      "title": "Backup & Restore"
+    },
+    {
+      "id": "module_09",
+      "number": 9,
+      "title": "Summary Queries & Aggregation"
+    },
+    {
+      "id": "module_10",
+      "number": 10,
+      "title": "Subqueries & Correlated Queries"
+    },
+    {
+      "id": "module_11",
+      "number": 11,
+      "title": "Data Types & Constraints"
+    },
+    {
+      "id": "module_12",
+      "number": 12,
+      "title": "Views & Logical Presentation"
+    },
+    {
+      "id": "module_13",
+      "number": 13,
+      "title": "Stored Programs"
+    },
+    {
+      "id": "module_14",
+      "number": 14,
+      "title": "Transactions & Locking"
+    },
+    {
+      "id": "module_15",
+      "number": 15,
+      "title": "Functions & Stored Procedures"
+    },
+    {
+      "id": "module_16",
+      "number": 16,
+      "title": "Triggers & Scheduled Events"
+    },
+    {
+      "id": "module_final",
+      "number": 99,
+      "title": "Final Project \u2014 my_web_db"
+    }
+  ]
+}

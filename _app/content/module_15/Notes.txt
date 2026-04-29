@@ -1,0 +1,5 @@
+Module 15 notes:
+- Created stored procedures and functions to validate and compute data.
+- Used `SIGNAL` to enforce constraints on negative pricing values.
+- Built reusable functions for discount and item total calculations.
+- Tested each routine with multiple `CALL` statements.

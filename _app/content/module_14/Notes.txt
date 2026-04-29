@@ -1,0 +1,5 @@
+Module 14 notes:
+- Implemented transactional procedures for delete and insert workflows.
+- Used `LAST_INSERT_ID()` to link an order with its line items.
+- Added row locking to merge customer data safely.
+- Included rollback handling for failure cases.

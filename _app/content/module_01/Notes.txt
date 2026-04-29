@@ -1,0 +1,6 @@
+Module 1 notes:
+- Identified the Orders table, columns, and primary key.
+- Explained column data types and the purpose of primary keys.
+- Created a Products table with product_id, product_name, price, and category.
+- Added a foreign key constraint to Orders.customer_id referencing Customers.customer_id.
+- Reflected that keys enforce uniqueness and relationships between tables.

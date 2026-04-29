@@ -1,0 +1,4 @@
+# The application uses ONLY the Python standard library
+# (tkinter + sqlite3 + json + pathlib + dataclasses).
+# This file exists for the .exe builder.
+pyinstaller>=6.0

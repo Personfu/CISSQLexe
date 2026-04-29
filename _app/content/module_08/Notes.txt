@@ -1,0 +1,4 @@
+Module 8 notes:
+- Provided the mysqldump command to export the full mydb database.
+- Provided the MySQL restore command to import into mydb_restored.
+- Recommended a recovery plan with daily backups, weekly integrity checks, and periodic restore drills.

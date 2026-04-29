@@ -1,0 +1,4 @@
+Module 4 notes:
+- Used INNER JOIN to list orders with customer names.
+- Used LEFT JOIN to include all customers, including those without orders.
+- Combined Orders, Order_Items, Products, and Customers to show order details with product names.

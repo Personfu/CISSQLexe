@@ -1,0 +1,5 @@
+Module 6 notes:
+- Created a new database user with explicit credentials and limited privileges.
+- Granted SELECT and INSERT privileges, then revoked INSERT access to demonstrate privilege management.
+- Reviewed global system variables and changed time_zone and max_connections.
+- Described a backup strategy with daily backups, off-site copies, and regular recovery testing.

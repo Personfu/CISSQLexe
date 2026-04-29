@@ -1,0 +1,5 @@
+Module 16 notes:
+- Created validation triggers for discount percent and product date defaults.
+- Built an audit table and after-update trigger to capture old product rows.
+- Implemented a scheduled event to prune audit rows older than 1 week.
+- Verified the event scheduler and cleaned up with `DROP EVENT`.

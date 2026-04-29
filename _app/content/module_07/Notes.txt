@@ -1,0 +1,4 @@
+Module 7 notes:
+- Created a secure database user with limited privileges.
+- Demonstrated granting and revoking access explicitly.
+- Described database security best practices, including least privilege, network restrictions, and encryption.

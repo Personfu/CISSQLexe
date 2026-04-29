@@ -1,0 +1,5 @@
+Module 3 notes:
+- Completed basic SELECT queries to retrieve all product columns.
+- Filtered products with prices greater than 100.
+- Sorted product names and prices in descending order.
+- Used column aliases to return Product and Cost labels.

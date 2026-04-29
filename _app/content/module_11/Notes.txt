@@ -1,0 +1,5 @@
+Module 11 notes:
+- Designed a users table with email, first and last name, date of birth, and signup date.
+- Chose VARCHAR lengths appropriate for textual values and DATETIME for signup time.
+- Created a transactions table with DECIMAL(7,2) to store amounts up to 9999.99.
+- Enforced NOT NULL and length constraints, including a required first_name field.

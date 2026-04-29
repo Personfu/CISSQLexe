@@ -1,0 +1,4 @@
+Module 9 notes:
+- Created aggregate queries for vendor invoice counts and total amounts.
+- Used HAVING to filter grouped results by total sales and invoice count.
+- Implemented a window function to calculate a running total per vendor.

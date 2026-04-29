@@ -1,0 +1,5 @@
+Module 5 notes:
+- Added three new product rows to the Products table.
+- Updated the price and product name for two existing products.
+- Deleted one product record using its product_id.
+- Explained that data integrity is maintained with proper constraints and testing before DML operations.

@@ -1,0 +1,4 @@
+Module 10 notes:
+- Used a scalar subquery to compare invoice totals against the average.
+- Used an aggregate subquery to find vendors with values greater than any invoice for vendor 95.
+- Created a correlated subquery to identify vendors with invoices below their own average payment total.

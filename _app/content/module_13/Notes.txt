@@ -1,0 +1,5 @@
+Module 13 notes:
+- Implemented conditional stored procedures with count and average logic.
+- Used a cursor to format high-value products into a single output string.
+- Added duplicate insert handling for the Categories table.
+- Used several `CALL` statements to validate each procedure.

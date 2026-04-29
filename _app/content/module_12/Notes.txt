@@ -1,0 +1,5 @@
+Module 12 notes:
+- Created a customer address view to join customer and address tables.
+- Queried the view for selected customer address fields.
+- Updated the shipping address through the view for a specific customer.
+- Built summary views for product sales and selected the top 5 products.

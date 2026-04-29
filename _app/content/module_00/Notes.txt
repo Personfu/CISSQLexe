@@ -1,0 +1,60 @@
+FAQ:
+
+# Frequently Asked Questions (FAQ)
+
+**Q: Do I need prior experience with SQL?**
+A: No prior experience is required. This course starts from the basics and builds to advanced topics.
+
+**Q: What software do I need?**
+A: MySQL Workbench (installation guides provided), a text editor, and access to course materials.
+
+**Q: How do I get help if I’m stuck?**
+A: See the Support page for contact info, office hours, and additional resources.
+
+**Q: Are assignments graded?**
+A: Yes, each assignment and quiz has a rubric and point value.
+
+**Q: Can I work ahead?**
+A: Yes! All modules are available for self-paced learning.
+
+---
+
+For more questions, contact your instructor.
+
+Support:
+
+# Support, Privacy, and Accessibility
+
+## Need Help?
+- Email: support@personfu-sqlcourse.com
+- Office hours: See course announcements
+- Counseling and student services: [Link or contact info]
+
+## Data, Privacy, and Accessibility
+- Your data is protected and used only for educational purposes
+- Accessibility accommodations available—contact support for details
+
+## Frequently Asked Questions
+- See docs/FAQ.md for common questions
+
+---
+
+We are committed to your success!
+
+Privacy:
+
+# Learners Data, Privacy, and Accessibility Information
+
+## Data and Privacy
+- Your personal data is protected and used only for educational purposes
+- No data is shared with third parties
+- You may request to review or delete your data at any time
+
+## Accessibility
+- Course materials are designed to be accessible to all learners
+- Alternative formats and accommodations are available upon request
+- Contact support for accessibility needs
+
+---
+
+We are committed to an inclusive and supportive learning environment.

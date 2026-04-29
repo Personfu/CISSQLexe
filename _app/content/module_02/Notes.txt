@@ -1,0 +1,6 @@
+Module 2 notes:
+- Installed and configured MySQL Workbench using the official MySQL documentation.
+- Created a MySQL connection and verified access to the server.
+- Created test_db and a test_table with id and name columns.
+- Executed a sample insert to confirm the database and table were available.
+- Documented the required Workbench tasks for Module 2 submission.

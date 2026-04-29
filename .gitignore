@@ -1,0 +1,14 @@
+# Build artifacts (rebuilt by BUILD_CISSQL_EXE.bat)
+_app/build/
+_app/dist/
+_app/__pycache__/
+_app/**/__pycache__/
+*.spec
+_PYC_CACHE/
+_LINUX_BUILD_TRASH/
+_LINUX_BUILD_TRASH2/
+_LINUX_BUILD_TRASH3.txt
+
+# Local progress (per-user, lives in %APPDATA% anyway, but just in case)
+progress.json
+session.db
