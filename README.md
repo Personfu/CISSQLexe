@@ -59,6 +59,12 @@ The app tracks each user's progress against the source curriculum:
 
 All state lives in `%APPDATA%\CISSQL\progress.json` and a persistent SQLite playground in `%APPDATA%\CISSQL\session.db`.
 
+The embedded lab accepts schema and data exercises in its own database. It rejects
+`ATTACH`, `DETACH`, `VACUUM INTO`, and file-affecting `PRAGMA` commands so pasted
+SQL cannot use the lab to open or create other SQLite files. The lab is still a
+local process running with your Windows account permissions; do not use it as a
+security boundary for untrusted code.
+
 ## Build From Source
 
 Requires Python 3.10+ on Windows. Run `BUILD_CISSQL_EXE.bat` from the repo root — it installs PyInstaller and produces `CISSQL.exe` (single-file, windowed, ~12 MB).

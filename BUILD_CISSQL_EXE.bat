@@ -32,8 +32,7 @@ if not defined PYCMD (
 
 echo.
 echo  [1/4] Installing PyInstaller (silent)...
-%PYCMD% -m pip install --upgrade pip                    >nul 2>&1
-%PYCMD% -m pip install --upgrade pyinstaller            >nul
+%PYCMD% -m pip install -r "%APPDIR%\requirements.txt" >nul
 if errorlevel 1 (
     echo  [ERROR] Failed to install PyInstaller.
     pause & exit /b 1
