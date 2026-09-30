@@ -3,6 +3,8 @@ _app/build/
 _app/dist/
 _app/__pycache__/
 _app/**/__pycache__/
+__pycache__/
+*.pyc
 *.spec
 _PYC_CACHE/
 _LINUX_BUILD_TRASH/

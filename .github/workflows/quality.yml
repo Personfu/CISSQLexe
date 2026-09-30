@@ -1,0 +1,26 @@
+name: SQL course quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-binary:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r _app/requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python -m compileall -q _app/cis_sql_course.py tests
+      - run: python -m PyInstaller --name CISSQL --onefile --windowed --noconfirm --add-data "_app/content;content" _app/cis_sql_course.py
+      - shell: pwsh
+        run: |
+          $process = Start-Process -FilePath .\dist\CISSQL.exe -ArgumentList '--self-test' -WindowStyle Hidden -PassThru -Wait
+          if ($process.ExitCode -ne 0) { exit $process.ExitCode }

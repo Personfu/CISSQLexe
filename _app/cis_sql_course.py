@@ -22,6 +22,7 @@ import os
 import re
 import sqlite3
 import sys
+import tempfile
 import textwrap
 import threading
 import time
@@ -322,10 +323,30 @@ class SQLSandbox:
 
     def __init__(self, db_path: Path):
         self.db_path = db_path
-        self.conn = sqlite3.connect(str(db_path))
-        self.conn.row_factory = sqlite3.Row
-        self.conn.execute("PRAGMA foreign_keys = ON;")
+        self.conn = self._connect()
         self._seed_if_empty()
+
+    @staticmethod
+    def _authorize(action: int, arg1: str | None, arg2: str | None,
+                   database: str | None, source: str | None) -> int:
+        # Learner SQL may be pasted from elsewhere. Keep it inside the course
+        # database, even when SQLite syntax hides file access in comments or
+        # strings. VACUUM INTO also invokes the ATTACH authorizer action.
+        if action in (sqlite3.SQLITE_ATTACH, sqlite3.SQLITE_DETACH):
+            return sqlite3.SQLITE_DENY
+        if action == sqlite3.SQLITE_PRAGMA:
+            pragma = (arg1 or "").lower()
+            introspection = {"table_info", "index_info", "index_list", "foreign_key_list"}
+            if pragma not in introspection and not (pragma == "foreign_keys" and arg2 is None):
+                return sqlite3.SQLITE_DENY
+        return sqlite3.SQLITE_OK
+
+    def _connect(self) -> sqlite3.Connection:
+        conn = sqlite3.connect(str(self.db_path))
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA foreign_keys = ON;")
+        conn.set_authorizer(self._authorize)
+        return conn
 
     def _seed_if_empty(self):
         cur = self.conn.cursor()
@@ -395,9 +416,7 @@ class SQLSandbox:
         self.conn.close()
         try: self.db_path.unlink()
         except Exception: pass
-        self.conn = sqlite3.connect(str(self.db_path))
-        self.conn.row_factory = sqlite3.Row
-        self.conn.execute("PRAGMA foreign_keys = ON;")
+        self.conn = self._connect()
         self._seed_if_empty()
 
     def execute(self, sql: str) -> Tuple[List[str], List[List], Optional[str]]:
@@ -1476,6 +1495,25 @@ class CISCourseApp(tk.Tk):
 # --------------------------------------------------------------------------- #
 
 def main():
+    if sys.argv[1:] == ["--self-test"]:
+        manifest = CONTENT_DIR / "manifest.json"
+        if not manifest.is_file():
+            raise SystemExit("Bundled course content is missing")
+        json.loads(manifest.read_text(encoding="utf-8"))
+        with tempfile.TemporaryDirectory() as temp:
+            lab = SQLSandbox(Path(temp) / "lab.db")
+            try:
+                columns, rows, error = lab.execute("SELECT COUNT(*) AS total FROM Customers")
+                if error or columns != ["total"] or rows != [[4]]:
+                    raise SystemExit("SQL lab smoke test failed")
+                _, _, error = lab.execute(f"VACUUM INTO '{Path(temp) / 'export.db'}'")
+                if not error or (Path(temp) / "export.db").exists():
+                    raise SystemExit("SQL lab file boundary failed")
+            finally:
+                lab.conn.close()
+        if sys.stdout:
+            print(f"CISSQL {APP_VERSION} self-test passed")
+        return
     try:
         app = CISCourseApp()
         app.mainloop()
